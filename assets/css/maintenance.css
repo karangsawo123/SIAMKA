@@ -1,0 +1,46 @@
+/* perawatan */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.card i {
+  font-size: 30px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.card p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(37,99,235,0.25);
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.data-table td[style*='green'] { color: #16a34a !important; }
+.data-table td[style*='red'] { color: #dc2626 !important; }
+.data-table td[style*='blue'] { color: #2563eb !important; }

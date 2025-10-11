@@ -1,0 +1,102 @@
+/* === Layout Dasar Modern === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px 1fr 50px;
+  height: 100vh;
+  color: #222;
+  background-color: #f4f6f8;
+}
+
+
+
+/* Header */
+.header {
+  grid-area: header;
+  background-color: #1e293b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;       /* ✅ ini penting agar logo & teks sejajar vertikal */
+  gap: 10px;                 /* jarak antara logo dan teks */
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #f8fafc;
+}
+
+.logout-btn {
+  color: #f87171;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background: #0f172a;
+  padding: 20px;
+  color: white;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin: 15px 0;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #e2e8f0;
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.sidebar a:hover {
+  background: #1e40af;
+}
+
+/* Content */
+.content {
+  grid-area: content;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+
+
+
+

@@ -4,6 +4,13 @@ if ($_SESSION['role'] != 'admin') {
     header("Location: ../../login.php");
     exit();
 }
-echo "<h2>Selamat datang, Admin " . $_SESSION['nama'] . "</h2>";
-echo "<a href='../../logout.php'>Logout</a>";
+include '../../templates/header.php';
+include '../../templates/sidebar.php';
 ?>
+
+<main class="content">
+  <h1>Selamat datang, <?= $_SESSION['nama']; ?> 👋</h1>
+  <p>Ini adalah Dashboard Admin. Anda dapat mengelola data aset, peminjaman, dan perawatan.</p>
+</main>
+
+<?php include '../../templates/footer.php'; ?>

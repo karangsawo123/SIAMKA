@@ -1,9 +1,7 @@
 <?php
-session_start();
-if ($_SESSION['role'] != 'pengguna') {
-    header("Location: ../../login.php");
-    exit();
-}
-echo "<h2>Selamat datang, Pengguna " . $_SESSION['nama'] . "</h2>";
-echo "<a href='../../logout.php'>Logout</a>";
+include '../../includes/header.php';
+include '../../includes/sidebar_pengguna.php';
 ?>
+<h2>Dashboard Pengguna</h2>
+<p>Selamat datang, <?= $_SESSION['nama']; ?>! Anda login sebagai Pengguna.</p>
+<?php include '../../includes/footer.php'; ?>

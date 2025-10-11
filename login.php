@@ -12,50 +12,59 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
 
-        // Cek password (sementara belum di-hash)
         if ($password === $row['password']) {
             $_SESSION['id_user'] = $row['id_user'];
             $_SESSION['nama'] = $row['nama'];
             $_SESSION['role'] = $row['role'];
 
-            // Arahkan ke halaman sesuai role
             if ($row['role'] == 'admin') {
                 header("Location: pages/admin/dashboard.php");
             } elseif ($row['role'] == 'pengguna') {
                 header("Location: pages/pengguna/dashboard.php");
-            } elseif ($row['role'] == 'manajemen') {
+            } else {
                 header("Location: pages/manajemen/dashboard.php");
             }
             exit();
         } else {
-            $error = "Password salah!";
+            $error = "⚠️ Password salah!";
         }
     } else {
-        $error = "Email tidak ditemukan atau akun nonaktif!";
+        $error = "⚠️ Email tidak ditemukan atau akun nonaktif!";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login SIAMKA</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="login-container">
-        <h2>Login Sistem Aset Manajemen Kampus</h2>
-        <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-        <form method="POST">
-            <label>Email</label>
-            <input type="text" name="email" required>
-            
-            <label>Password</label>
-            <input type="password" name="password" required>
+        <div class="login-box">
+            <img src="assets/img/logo.png" alt="Logo SIAMKA" class="logo">
+            <h2>SIAMKA</h2>
+            <p>Sistem Aset Manajemen Kampus</p>
 
-            <button type="submit" name="login">Login</button>
-        </form>
+            <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>
+
+            <form method="POST" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" name="login">Masuk</button>
+            </form>
+            <footer>
+                <p>© 2025 SIAMKA - Universitas Hogwarts</p>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

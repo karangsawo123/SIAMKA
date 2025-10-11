@@ -1,0 +1,22 @@
+/* Submenu sedikit menjorok dan lebih kecil */
+.sidebar .dropdown-content {
+  margin-left: 18px;
+  font-size: 0.95em;
+  display: none; /* default hidden, server bisa render inline block */
+}
+
+/* class 'show' dipakai oleh JS untuk keadaan terbuka */
+.sidebar .dropdown-content.show {
+  display: block;
+}
+
+/* Indikator aktif — sesuaikan warna jika perlu, atau pakai warna yang sudah theme-mu pakai */
+.sidebar a.active {
+  font-weight: 600;
+  /* jangan ubah background jika kamu tidak mau; ubah hanya opacity ringan */
+  background-color: rgba(0,0,0,0.06);
+}
+.sidebar a.active-sub {
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.04);
+}

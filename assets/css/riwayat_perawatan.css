@@ -1,0 +1,260 @@
+/* ==============================
+   📋 STYLE TABEL RIWAYAT
+============================== */
+.riwayat-page .data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.riwayat-page .data-table thead tr th {
+  background-color: #1d294d; /* warna biru SIAMKA */
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+  border: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.riwayat-page .data-table tbody td {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 12px;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+/* Hover baris tabel */
+.riwayat-page .data-table tbody tr:hover td {
+  background-color: #f4f7ff;
+  cursor: pointer;
+}
+
+/* Header tetap solid */
+.riwayat-page .data-table thead tr:hover th {
+  background-color: #1d294d !important;
+  color: #fff !important;
+}
+
+/* ==============================
+   🔍 SEARCH BOX
+============================== */
+.riwayat-page .search-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.riwayat-page .search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.riwayat-page .search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 16px;
+}
+
+.riwayat-page .search-wrapper input {
+  width: 100%;
+  padding: 10px 10px 10px 38px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 25px;
+  outline: none;
+  background-color: #fff;
+  font-size: 15px;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.riwayat-page .search-wrapper input:focus {
+  border-color: #2b3a67;
+  box-shadow: 0 0 8px rgba(43, 58, 103, 0.25);
+}
+
+.riwayat-page .search-wrapper input::placeholder {
+  color: #999;
+}
+
+/* ==============================
+   🎨 TOMBOL DETAIL
+============================== */
+.riwayat-page .btn-detail {
+  background-color: #2b3a67;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+}
+
+.riwayat-page .btn-detail:hover {
+  background-color: #394b8b;
+  box-shadow: 0 2px 6px rgba(43, 58, 103, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   🪟 MODAL DETAIL
+============================== */
+/* 🪟 Modal Detail */
+.riwayat-page .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* pastikan lebih tinggi dari header/footer */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+}
+
+.riwayat-page .modal.active {
+  display: flex;
+}
+
+.riwayat-page .modal-content {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 520px;
+  width: 90%;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.riwayat-page .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.riwayat-page .close-btn:hover {
+  color: #e74c3c;
+}
+
+.riwayat-page #modalBody {
+  margin-top: 30px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🪟 Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55); /* gelap lembut di belakang */
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px); /* efek blur ringan background */
+}
+
+/* Saat modal aktif */
+.modal.active {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+/* 🧱 Kotak isi modal */
+.modal-content {
+  background: #ffffff;              /* warna putih solid */
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 550px;
+  animation: zoomIn 0.3s ease;
+  position: relative;
+  color: #1e293b;
+}
+
+/* Judul modal */
+.modal-content h3 {
+  border-bottom: 2px solid #2b3a67;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #2b3a67;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tombol close (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Animasi */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ==============================
+   ✨ ANIMASI
+============================== */
+.riwayat-page .fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==============================
+   💡 HIGHLIGHT HASIL PENCARIAN
+============================== */
+.riwayat-page .highlight {
+  background-color: #e2e9ff !important;
+  transition: background-color 0.3s ease;
+}
